@@ -3,6 +3,14 @@ public class Arr {
   Array is an indexed collection of fixed number of homogeneous data types
    */
 
+  public class Something{
+
+    int [] arr1 = new int[3];
+
+
+
+  }
+
 
 
 }
