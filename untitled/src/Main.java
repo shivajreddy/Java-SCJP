@@ -1,6 +1,17 @@
 public class Main {
   public static void main(String[] args) {
 
+    int[] arr1 = new int[5];
+    System.out.println(arr1);
+    System.out.println(arr1.getClass().getName());
+
+    String s3 = "some string here";
+    System.out.println(s3.getClass().getName());
+
+    int [] arr2[] = new int[3][3];
+    System.out.println(arr2.getClass().getName());
+
+
     int x = 10;
     int octa_x = 010;
     int hex_x = 0x10;
@@ -55,7 +66,7 @@ public class Main {
     /* String Literal
     */
     String s2 = "shiva";
-    String s3 = "\rshiva";
+//    String s3 = "\rshiva";
 
 
     double _num = 1______23;
@@ -67,16 +78,8 @@ public class Main {
 
     char c7 = 120;
 
-//    short s5 = c7;
+    Arr.meth();
 
-    int[] arr1;
-    int[] arr2 = new int[3];
-    arr2[0] = 1;
-//    System.out.println(arr1);
-
-    int[] arr3;
-    int []arr4;
-    int arr5 [];
 
   }
 
