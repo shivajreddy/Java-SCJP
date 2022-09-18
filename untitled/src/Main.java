@@ -1,88 +1,19 @@
 public class Main {
   public static void main(String[] args) {
-
-    int[] arr1 = new int[5];
-    System.out.println(arr1);
-    System.out.println(arr1.getClass().getName());
-
-    String s3 = "some string here";
-    System.out.println(s3.getClass().getName());
-
-    int [] arr2[] = new int[3][3];
-    System.out.println(arr2.getClass().getName());
-
-
-    int x = 10;
-    int octa_x = 010;
-    int hex_x = 0x10;
-
-    long big = 200l;
-
-    short s = -32768;
-
-    System.out.println(x + "..." + octa_x + "..." + hex_x);
-
-    System.out.println(big);
-
-    long l = 10;
-    long l2 = 100L;
-
-
-    float f = 123.456F;
-    // float f_invalid = 123.456;
-    double d = 0XFaCE0a99;
-    float ff = 123.1f;
-    System.out.println(d);
-
-    System.out.println(Double.min(10,10));
-
-//    float f2 = 123.1;
-
-    double d2 = 1.23e3;
-    System.out.println(d2);
-
-    char letter = 253;
-    System.out.println(letter);
-
-    char ch = 'b';
-    System.out.println(ch);
-
-    char ch2 = '\u1971';
-    System.out.println(ch2);
-
-    char ch3 = '\u0062';
-    System.out.println(ch3);
-
-    char ch4 = '\t';
-    System.out.println(ch3 +"."+ ch4+"." + ch3);
-    System.out.println(ch3);
-
-    char maxChar = 65535;
-    System.out.println(maxChar);
-
-    char s1 = '\udeef';
-    System.out.println(s1);
-
-    /* String Literal
-    */
-    String s2 = "shiva";
-//    String s3 = "\rshiva";
-
-
-    double _num = 1______23;
-
-    byte b1 = 10;
-
-    float f1 = 10;
-    String s4 = "reddy";
-
-    char c7 = 120;
-
     Arr.meth();
 
+//    System.out.println(sum(new int[]{10,10,100}));
 
   }
 
+  public static int sum(int[] arr){
+    int result = 0;
+    for(int num : arr){
+      result += num;
+    }
+
+    return result;
+  }
 
     /* Reserved Keywords
     53
