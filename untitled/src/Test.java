@@ -1,10 +1,13 @@
+// Command Line arguments
+
 public class Test {
 
-  public synchronized strictfp final static void main(String[] args){
-    System.out.println("this is the main method in Test class");
+  public static void main(String[] args){
+    System.out.println("Running the main method");
+
+    for(int i = 0; i <= args.length; i++){
+      System.out.println("Passed arg is " + args[i]);
+    }
   }
-//  public strictfp void main(String... shiva){
-//    System.out.println("this is the main method in Test class");
-//  }
 
 }
