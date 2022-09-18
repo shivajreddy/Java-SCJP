@@ -1,8 +1,24 @@
 public class Main {
+
   public static void main(String[] args) {
-    Arr.meth();
+//    Arr.meth();
+    Person shiva = new Person();
+
+    System.out.println(shiva.name);
+    System.out.println(shiva.roll_number);
+
+    System.out.println(Person.college_name);
+    Person.college_name = "new college";
+    System.out.println(Person.college_name);
+
+
+
+
+//    Arr.meth();
 
 //    System.out.println(sum(new int[]{10,10,100}));
+
+
 
   }
 
