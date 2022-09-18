@@ -7,5 +7,12 @@ public class Person {
   String name;
   int roll_number;
 
+  int[] arr3;
+  public void meth(){
+    int[] local_arr_initialized = new int[3];
+    int[] local_arr;
+    System.out.println(local_arr_initialized);
+//    System.out.println(local_arr);
+  }
 
 }

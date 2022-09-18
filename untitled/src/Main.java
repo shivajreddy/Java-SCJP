@@ -4,12 +4,20 @@ public class Main {
 //    Arr.meth();
     Person shiva = new Person();
 
-    System.out.println(shiva.name);
-    System.out.println(shiva.roll_number);
+//    System.out.println(shiva.name);
+//    System.out.println(shiva.roll_number);
+//
+//    System.out.println(Person.college_name);
+//    Person.college_name = "new college";
+//    System.out.println(Person.college_name);
+//
+//
+//    System.out.println(shiva.college_name);
 
-    System.out.println(Person.college_name);
-    Person.college_name = "new college";
-    System.out.println(Person.college_name);
+    shiva.meth();
+
+
+
 
 
 
