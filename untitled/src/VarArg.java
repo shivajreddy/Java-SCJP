@@ -10,12 +10,13 @@ public class VarArg {
   Introduced in 1.5 Java
    */
 
-  public static void methodOne(int[]... x){
-    System.out.println(x[0][0]);
-  }
 
-  public static void meth(){
-    VarArg.methodOne();
-  }
+//  public static void methodOne(int[]... x){
+//    System.out.println(x[0][0]);
+//  }
+//
+//  public static void meth(){
+//    VarArg.methodOne();
+//  }
 
 }

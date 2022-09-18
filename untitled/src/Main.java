@@ -1,14 +1,14 @@
 public class Main {
 
-  public static void main(String[] args) {
-    VarArg v1 = new VarArg();
-    VarArg.meth();
-
-//    System.out.println(VarArg.sum(new int[]{1,2,3,4}));
-//    System.out.println(va.sum(1,2,3,4));
-//    System.out.println(va.sum());
-//    System.out.println(va.sum(10,20));
-//    System.out.println(va.sum(20,30));
+  public static void mainx(String[] args){
+    System.out.println("this is the parent main method");
   }
 
+
+}
+
+class Child extends  Main{
+//  public static void main(String[] args){
+//    System.out.println("this is the child's main method");
+//  }
 }
