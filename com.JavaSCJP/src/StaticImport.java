@@ -24,7 +24,8 @@ public class StaticImport
   }
 
 
-  public static void withOutStaticImport(){
+  public static void withOutStaticImport()
+  {
     System.out.println(Math.sqrt(20));
     System.out.println(Math.random());
   }
@@ -38,6 +39,8 @@ public class StaticImport
      */
 
   }
+
+}
 
 
 
