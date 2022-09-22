@@ -1,5 +1,4 @@
-import static java.lang.System.out;
-import static java.lang.System.*;
+import com.shiva.Test2;
 
 public class Test
 {
@@ -7,8 +6,13 @@ public class Test
   public static void main(String[] args) throws Exception
   {
 
-    out.println("hi");
-    out.println("hi");
+    System.out.println("Hello World!");
+
+    int x = 10;
+
+    byte b = 21;
+
+    System.out.println(x + b);
 
   }
 
