@@ -1,22 +1,24 @@
 package pack1;
-
-public abstract class A
+public class A
 {
-
-  public void methodOne(){
-    System.out.println("methodOne from class A");
-  }
-
-  private int age;
-
-  abstract String name();
-
-}
-
-class C extends A
-{
-  @Override
-  String name() {
-    return "shiva";
+  protected void method1()
+  {
+    System.out.println("this is method 1. inside class A");
   }
 }
+
+class C
+{
+  public void meth()
+  {
+    A a = new A();
+    a.method1();
+
+  }
+}
+
+/* 1.5 hours of Final Variables
+Instance Variables
+Static Variables
+Local Variables
+ */
