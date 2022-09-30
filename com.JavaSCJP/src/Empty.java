@@ -25,7 +25,9 @@ Not a language feature, but it's a programming approach
  */
 
 /* Interface vs. Abstract Class vs. Concrete class
-
-
  */
 
+
+/* Inheritance
+
+ */
