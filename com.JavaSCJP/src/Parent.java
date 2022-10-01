@@ -1,12 +1,16 @@
 public class Parent
 {
-  public void m1(){
-    System.out.println("parents m1");
+
+  public void m(String x){
+    System.out.println("string version");
   }
-}
 
+  public void m(StringBuffer x){
+    System.out.println("StringBuffer version");
+  }
 
-class Child extends Parent
-{
+  // public void m(Object x){
+  //   System.out.println("Object version");
+  // }
 
 }
