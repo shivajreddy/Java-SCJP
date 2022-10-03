@@ -1,15 +1,14 @@
 public class Test
 {
-  public static void main(String[] args)
-  {
+  public static void main(String[] args){
 
-    Parent p = new Parent();
+    Person p = new Person();
+    Student s = new Student();
+    Person p1 = new Student();
 
-    p.m("shiva");
+    // p.m();
+    s.m();
 
-    p.m(new StringBuffer("shiva"));
-
-    p.m(null);
 
   }
 
