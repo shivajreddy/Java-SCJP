@@ -1,14 +1,13 @@
 public class Test
 {
+  public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
-  static {
-  System.out.println("hey man");
-  System.exit(0);
-  }
+    Person p = new Person();
 
-  public static void main(String[] args){
+    // Person p = (Person) Class.forName("Person").newInstance();
+
+    // Person p1 = p.clone();
 
   }
 
 }
-
