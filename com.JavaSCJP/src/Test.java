@@ -1,7 +1,3 @@
-abstract class Test
+public class Test
 {
-  Test(){
-
-  }
-
 }
