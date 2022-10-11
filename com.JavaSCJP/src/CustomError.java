@@ -1,4 +1,4 @@
-class TooOldException extends RuntimeException
+public class TooOldException extends RuntimeException
 {
   TooOldException(String errorMessage){}
 }
