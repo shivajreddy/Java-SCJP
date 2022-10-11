@@ -11,7 +11,8 @@ public class Test
     // at this point there are 2 threads -> main thread, t thread (which we just created & started)
     // from now on, all the jobs in both the threads above will execute simultaneously. we will mixed output
 
-    for (int i = 0; i < 10; i++){
+    for (int i = 0; i < 10; i++)
+    {
       System.out.println("main thread. task: " + i);
     }
 
