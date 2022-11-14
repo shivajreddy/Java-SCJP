@@ -1,16 +1,18 @@
-public class Test {
-  public static void main(String[] args) throws InterruptedException {
+public class Test
+{
 
-    SeethaThread t = new SeethaThread();
+    public static void main(String[] args)
+    {
+        System.out.println("hey man");
+    }
 
-    t.start();
+    // Inner class
+    class Inner
+    {
+        void method1()
+        {
+            System.out.println("this is inner class method1");
+        }
+    }
 
-    t.join(500);     // this method call must handle InterruptedException -> either try/catch or thrwos IE
-
-    for (int i = 0; i < 5; i++)
-      {
-      System.out.println("rama thread");
-      }
-
-  }
 }
