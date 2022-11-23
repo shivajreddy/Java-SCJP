@@ -6,10 +6,12 @@ public class Demo {
 
         Thread t = new Thread(r); // r is the target, where r is Runnable(MyRunnable extends Runnable)type
         t.start();
+        r.run();
 
         for (int i = 0; i < 10; ++i) {
             System.out.println(i + " Main Thread: " + Thread.currentThread().getName());
         }
+
     }
 }
 
@@ -24,6 +26,7 @@ class MyRunnable implements Runnable {
 }
 
 class MyThread2 extends Thread {
+
     @Override
     public void run() {
         for (int i = 0; i < 10; ++i) {
