@@ -1,32 +1,34 @@
 public class Demo {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
 
         MyRunnable.mt = Thread.currentThread();
-
         MyRunnable r = new MyRunnable();
-        Thread t = new Thread(r); //# r is the target, where r is Runnable(MyRunnable extends Runnable)type
+        Thread t = new Thread(r);
         t.start();
 
-        // # Job of main thread
+        // # main thread body
         for (int i = 0; i < 10; ++i) {
-            System.out.println(i + " Main Thread : " + Thread.currentThread().getName());
+            System.out.println("Main Thread: " + Thread.currentThread());
         }
+
     }
 }
 
 class MyRunnable implements Runnable {
-
     static Thread mt;
 
+    @Override
     public void run() {
-        // # Job of Runnable item
+        // # yield for main thread to complete
+        try {
+            mt.join();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        // # task body
         for (int i = 0; i < 10; ++i) {
-            try {
-                mt.join();
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-            System.out.println(i + " MyRunnable : " + Thread.currentThread().getName());
+            System.out.println("Child Thread: " + Thread.currentThread());
         }
     }
 }
