@@ -1,40 +1,71 @@
 public class Demo {
-
     public static void main(String[] args) {
 
-        Display d1 = new Display();
+        Display d = new Display();
 
-        MyThread t1 = new MyThread(d1, "dhoni");
-        MyThread t2 = new MyThread(d1, "yuva");
+        DisplayJob1 job1 = new DisplayJob1(d);
+        DisplayJob2 job2 = new DisplayJob2(d);
+
+        Thread t1 = new Thread(job1);
+        Thread t2 = new Thread(job2);
+
         t1.start();
         t2.start();
+
     }
 }
 
 class Display {
+    public synchronized void displayN() {
+        for (int i = 0; i < 10; i++) {
+            System.out.println(i);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                System.out.println(e);
+            }
+        }
+    }
 
-    public synchronized void wish(String name) {
-        for (int i = 0; i < 10; ++i) {
-            System.out.println(i + " : " +  name + " : " + Thread.currentThread());
+    public synchronized void displayC() {
+        for (int i = 65; i < 75; i++) {
+            System.out.println((char) i);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                System.out.println(e);
+            }
         }
-        try {
-            Thread.sleep(1500);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+    }
+
+    // synchronized(Display.class)
+    // {
+    // }
+
+}
+
+class DisplayJob1 implements Runnable {
+    Display d;
+
+    public DisplayJob1(Display d) {
+        this.d = d;
+    }
+
+    @Override
+    public void run() {
+        d.displayN();
     }
 }
 
-class MyThread extends Thread {
+class DisplayJob2 implements Runnable {
     Display d;
-    String name;
 
-    public MyThread(Display d, String name) {
+    public DisplayJob2(Display d) {
         this.d = d;
-        this.name = name;
     }
 
+    @Override
     public void run() {
-        d.wish(name);
+        d.displayC();
     }
 }
