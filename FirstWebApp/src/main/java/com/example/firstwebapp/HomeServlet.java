@@ -26,6 +26,7 @@ public class HomeServlet extends HttpServlet {
 
     // # GET method
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        Thread t = new Thread();
 
         // System.out.println(getServletContext().getInitParameter("algorithm"));
         // System.out.println(request.getServletContext().getInitParameter("db-name"));
