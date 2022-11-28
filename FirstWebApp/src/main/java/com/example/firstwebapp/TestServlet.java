@@ -9,12 +9,13 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 class Employee {
-    private int id;
-    private String name;
-    private String dept;
-    private int salary;
+    protected int id;
+    protected String name;
+    protected String dept;
+    protected int salary;
 
     public Employee(int id, String name, String dept, int salary) {
         this.id = id;
@@ -34,6 +35,17 @@ public class TestServlet extends HttpServlet {
         String employeeJsonString = this.gson.toJson(employee);
 
         PrintWriter out = res.getWriter();
+
+        // # access the servletContext attribute here
+        Employee e2 = (Employee) getServletContext().getAttribute("secret");
+        System.out.println("this is attr: " + e2);
+        System.out.println(e2.id);
+
+        // # access the sessionContext attribute here
+        HttpSession httpSession = req.getSession();
+        Employee e3 = (Employee) httpSession.getAttribute("session-secret");
+        System.out.println("this is session secret: " + e3);
+
         res.setContentType("application/json");
         res.setCharacterEncoding("UTF-8");
         System.out.println(employeeJsonString);

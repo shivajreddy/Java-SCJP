@@ -19,6 +19,7 @@ public class DbServlet extends HttpServlet {
         PrintWriter out = res.getWriter();
         out.append("served at: ").append(req.getContextPath());
 
+
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/emplyee_db", "root", "root");
