@@ -1,5 +1,3 @@
-import org.jetbrains.annotations.NotNull;
-
 public class Demo {
 
     public static void main(String[] args) throws InterruptedException {
@@ -13,7 +11,6 @@ public class Demo {
 
     }
 }
-
 
 class Thread1 extends Thread {
     A a;
