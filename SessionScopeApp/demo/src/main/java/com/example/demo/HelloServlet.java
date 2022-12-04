@@ -15,9 +15,10 @@ public class HelloServlet extends HttpServlet {
 
     public void init() {
         message = "Hello World!";
+        System.out.println("this is init from helloServlet");
     }
 
-    public void doPost(HttpServletRequest req, HttpServletResponse res){
+    public void doPost(HttpServletRequest req, HttpServletResponse res) {
         System.out.println("received a post request");
     }
 
@@ -32,6 +33,8 @@ public class HelloServlet extends HttpServlet {
         out.println("<html><body>");
         out.println("<h1>" + message + "</h1>");
         out.println("</body></html>");
+
+        System.out.println(request.getServletContext().getAttribute(""));
     }
 
 
