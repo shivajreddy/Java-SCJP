@@ -43,6 +43,9 @@ public class MyServlet extends HttpServlet {
 
         System.out.println(Arrays.asList(req.getParameterNames()));
 
+        // sending a response
+        res.setStatus(300);
+
     }
 }
 
