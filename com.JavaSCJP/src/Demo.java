@@ -1,17 +1,26 @@
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.LinkedList;
-import java.util.Stack;
+import java.util.Enumeration;
+import java.util.Vector;
 
 public class Demo {
     public static void main(String[] args) {
 
-        Stack<Integer> stack = new Stack<>();
+        Vector<Integer> vector = new Vector<>();
 
-        stack.add(10);
-        stack.add(20);
-        stack.add(30);
+        for (int i = 0; i < 10; i++) {
+            vector.addElement(i);
+        }
+
+        System.out.println(vector);
+
+        // We can get the Enumeration cursor from Vector using .elements()
+        Enumeration enumeration = vector.elements();
+
+        while (enumeration.hasMoreElements()) {
+            int i = (int) enumeration.nextElement();
+            if (i % 2 == 0) {
+                System.out.println(i);
+            }
+        }
 
     }
 }
-
