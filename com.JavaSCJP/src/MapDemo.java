@@ -1,36 +1,52 @@
 import java.util.HashMap;
-import java.util.IdentityHashMap;
-import java.util.LinkedHashMap;
+import java.util.WeakHashMap;
 
 public class MapDemo {
     public static void main(String[] args) {
 
-        HashMap hashMap = new HashMap();
 
-        Integer x = new Integer(10);
-        Integer y = new Integer(10);
+        HashMap<Temp, String> hashMap = new HashMap<>();
+        Temp temp = new Temp();
+        hashMap.put(temp, "durga");
 
-        hashMap.put(x, "shiva");
-        hashMap.put(y, "reddy");
+        WeakHashMap<Temp, String> weakHashMap = new WeakHashMap<>();
+        Temp weakTemp = new Temp();
+        weakHashMap.put(weakTemp, "shiva");
 
-        System.out.println(hashMap); // {10=reddy}
 
+        // setting the both objects to null, so that GC can destroy them
+        temp = null;
+        weakTemp = null;
 
-        IdentityHashMap identityHashMap = new IdentityHashMap();
+        // before garbage collector destroys an object, it calls the clean-up methods of that object if any.
+        System.gc();
 
-        identityHashMap.put(x, "shiva");
-        identityHashMap.put(y, "reddy");
-
-        System.out.println(identityHashMap); // {10=shiva, 10=reddy}
-
+        System.out.println("hashMap = " + hashMap);
+        System.out.println("weakHashMap = " + weakHashMap);
 
     }
 }
 
 
-/* IdentityHashMap
+/* WeakHashMap
  *
- * same as HashMap except:
- *      1. for HashMap, JVM will use .equals() i.e., content comparison
- *      2. but for IdentityHashMap, JVM will use == i.e., reference comparison
+ * Same as HashMap except these:
+ *      In both HashMap & WeakHashMap a value object is not eligible for GC, thought it has no reference
+ *      1. In HashMap a key object is not eligible for GC, even though it doesn't have any reference
+ *      2. In WeakHashMap, if a key object is eligible for GC, if it has no reference
  */
+
+
+class Temp {
+    @Override
+    public String toString() {
+        return "temp";
+    }
+
+    @Override
+    protected void finalize() throws Throwable {
+        System.out.println("finalize method is called");
+    }
+
+}
+
