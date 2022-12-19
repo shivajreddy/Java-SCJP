@@ -1,70 +1,22 @@
-import java.util.Comparator;
-import java.util.TreeSet;
+import org.jetbrains.annotations.NotNull;
 
-/* Comparator(I) -> custom sorting order
- *
- * 2 methods -> 1. public int compare(obj1, obj2); 2.public boolean equals(object obj);
- * should only implement 1 method -> compare(obj1, obj2);
- */
+import java.util.TreeSet;
 
 public class Main {
     public static void main(String[] args) {
 
-        // TreeSet<Person> personTree = new TreeSet<>(new PersonAgeOrder());
-        //
-        // personTree.add(new Person(27, "A"));
-        // personTree.add(new Person(27, "A2"));
-        // personTree.add(new Person(21, "Z"));
-        // personTree.add(new Person(32, "D"));
-        //
-        // System.out.println("personTree = " + personTree);
+        TreeSet<Person> personTree = new TreeSet<>();
 
-        TreeSet<String> ts = new TreeSet<>(new MyComparator());
+        personTree.add(new Person(21, "queue"));
+        personTree.add(new Person(23, "shiva"));
+        personTree.add(new Person(27, "reddy"));
 
-        ts.add("A");
-        ts.add("ABC");
-        ts.add("xx");
-        ts.add("AA");
-        ts.add("ABCD");
-        ts.add("A");
-
-        System.out.println("ts = " + ts); // [A, AA, xx, ABC, ABCD]
+        System.out.println("personTree = " + personTree); // [Person{queue:21}, Person{shiva:23}, Person{reddy:27}]
 
     }
 }
 
-
-class MyComparator implements Comparator {
-
-    @Override
-    public int compare(Object o1, Object o2) {
-        String s1 = (String) o1;
-        String s2 = (String) o2;
-        // return -s1.compareToIgnoreCase(s2);
-        return s2.compareToIgnoreCase(s1);
-    }
-}
-
-
-
-
-class PersonAgeOrder implements Comparator {
-
-    @Override
-    public int compare(Object o1, Object o2) {
-        Person newPerson = (Person) o1;
-        Person oldPerson = (Person) o2;
-        return -newPerson.getName().compareTo(oldPerson.getName());
-        // if (newPerson.getAge() < oldPerson.getAge()) {
-        //     return -1;
-        // } else if (newPerson.getAge() > oldPerson.getAge()) {
-        //     return 1;
-        // }
-        // return 0;
-    }
-}
-
-class Person {
+class Person implements Comparable {
     private int age;
     private String name;
 
@@ -85,4 +37,22 @@ class Person {
     public String toString() {
         return "Person{" + name + ":" + age + "}";
     }
+
+    @Override
+    public int compareTo(@NotNull Object o) {
+        int person1Age = this.getAge(); // new object we are inserting
+        int person2Age = ((Person) o).getAge();  // object that already exists
+        if (person1Age < person2Age) {
+            return -1;
+        } else if (person1Age > person2Age) {
+            return 1;
+        }
+        return 0;
+    }
 }
+
+
+/* comparison's b/w Comparable(I) & Comparator(I)
+ *
+ * Comparable(I) -> default natural sorting order
+ */
